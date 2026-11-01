@@ -8,6 +8,9 @@ Kirigami.FormLayout {
     id: root
 
     property var parentLayout
+    property var wallpaper
+    property var configDialog
+
     property string cfg_ScreenMappings: "[]"
     property string cfg_FallbackImage: ""
 
