@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*.swo
+*~
+pkg/
+src/
+*.pkg.tar.zst
+*.pkg.tar.xz
