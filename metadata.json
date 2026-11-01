@@ -1,0 +1,18 @@
+{
+  "KPackageStructure": "Plasma/Wallpaper",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "gqpdx"
+      }
+    ],
+    "Category": "Wallpaper",
+    "Description": "Assign independent wallpapers to displays in Plasma Login Manager",
+    "Icon": "preferences-desktop-wallpaper",
+    "Id": "io.github.gqpdx.plm-multiscreen-wallpaper",
+    "License": "GPL-2.0-or-later",
+    "Name": "PLM Multi-Screen Wallpaper",
+    "Version": "0.1.0",
+    "Website": "https://github.com/gqpdx/plm-multiscreen-wallpaper"
+  }
+}
