@@ -1,0 +1,12 @@
+pkgbase = plm-multiscreen-wallpaper
+	pkgdesc = Independent per-display wallpapers for Plasma Login Manager
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/gqpdx/plm-multiscreen-wallpaper
+	arch = any
+	license = GPL-2.0-or-later
+	depends = plasma-login-manager
+	source = plm-multiscreen-wallpaper-0.1.0.tar.gz::https://github.com/gqpdx/plm-multiscreen-wallpaper/archive/refs/tags/v0.1.0.tar.gz
+	sha256sums = eaf8906d3ff4eaa13495bac654d4c50516a755d511db6cdf3188d0ce0af648d8
+
+pkgname = plm-multiscreen-wallpaper

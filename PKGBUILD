@@ -8,7 +8,7 @@ url='https://github.com/gqpdx/plm-multiscreen-wallpaper'
 license=('GPL-2.0-or-later')
 depends=('plasma-login-manager')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/gqpdx/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('eaf8906d3ff4eaa13495bac654d4c50516a755d511db6cdf3188d0ce0af648d8')
 
 package() {
     install -d "${pkgdir}/usr/share/plasma/wallpapers/io.github.gqpdx.plm-multiscreen-wallpaper"
