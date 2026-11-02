@@ -47,34 +47,43 @@ WallpaperPluginId=io.github.gqpdx.plm-multiscreen-wallpaper
 
 Preserve any other settings already present in that file. Back it up before editing.
 
-Then open the PLM wallpaper configuration page (if exposed by your installed PLM/KDE configuration tools), configure the display mappings and fallback image, and restart the greeter or reboot to test.
+Note: PLM maintains an allowlist for wallpaper plugins displayed in its Appearance dropdown. Third-party plugins may not appear there. This does not prevent the greeter from loading a plugin selected manually through WallpaperPluginId.
 
-If your PLM build does not expose third-party wallpaper configuration pages, the plugin can still be configured through its KConfig group. The configuration UI and its integration vary by PLM/KDE build; see [Configuration](#configuration).
+After setting the plugin ID, open System Settings → Security & Privacy → Login Screen → Appearance. The plugin's configuration page provides controls for assigning images to individual displays and setting a fallback image.
 
 ## Configuration
 
-Each mapping pairs a Qt screen name with an image URL. For example:
+Each mapping pairs a Qt screen name with an image URL. The plugin supports formats recognized by Qt.
 
+For example:
 ```json
 [
   {
     "screen": "DP-2",
-    "image": "file:///var/lib/plasmalogin/wallpapers/landscape.jpg"
+    "image": "file:///usr/share/backgrounds/plm-multiscreen/landscape.jpg"
   },
   {
     "screen": "DP-3",
-    "image": "file:///var/lib/plasmalogin/wallpapers/portrait.jpg"
+    "image": "file:///usr/share/backgrounds/plm-multiscreen/portrait.jpg"
   }
 ]
 ```
 
-The fallback image is used whenever the current screen has no matching mapping or its mapped image is empty.
+The fallback image is used whenever the current screen has no matching mapping or its mapped image is empty. The display names must match the names reported to the greeter, not necessarily those shown in the desktop session.
 
-**Important: image permissions**
+## Image permissions
 
-The greeter runs separately from your desktop session. The PLM service account must be able to read every image file and traverse every parent directory. A file inside a private home directory (for example, `/home/your-user/Pictures` when the home directory is mode `0700`) will generally not be readable by the greeter.
+The greeter runs separately from your desktop session. The PLM service account must be able to read every image file and traverse every parent directory.
 
-A practical location is a directory such as `/var/lib/plasmalogin/wallpapers/` with image files readable by the PLM service account. Do not make your entire home directory world-readable just to expose a wallpaper.
+A recommended location for shared wallpapers is:
+
+`/usr/share/backgrounds/`
+
+For example:
+
+`/usr/share/backgrounds/plm-multiscreen/`
+
+Files should be readable by the PLM service account. Avoid placing wallpapers in private home directories unless you have explicitly configured the necessary permissions.
 
 ## Finding display names
 
